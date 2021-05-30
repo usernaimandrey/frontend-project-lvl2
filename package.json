@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Gendiff cli utils",
-  "main": "",
+  "main": "index.js",
   "type": "module",
   "jest": {
     "testEnvironment": "node",
