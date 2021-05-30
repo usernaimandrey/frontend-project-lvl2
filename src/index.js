@@ -20,4 +20,3 @@ const genDiff = (filePath1, filePath2) => {
 };
 
 export default genDiff;
-//  console.log(genDiff('frontend-project-lvl2/__fixtures__/before.json', 'frontend-project-lvl2/__fixtures__/after.json'));
