@@ -3,9 +3,9 @@ import path from 'path';
 
 const getAbsPath = (pathFile) => path.resolve(process.cwd(), pathFile);
 
-const fileParse = (fileName) => {
+const fileTransform = (fileName) => {
   const data = fs.readFileSync(getAbsPath(fileName), 'utf8');
   return JSON.parse(data);
 };
 
-export { getAbsPath, fileParse };
+export { getAbsPath, fileTransform };

@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import { fileParse } from './filesParse.js';
+import { fileTransform } from './fileTransform.js';
 
 const genDiff = (filePath1, filePath2) => {
-  const objBefore = fileParse(filePath1);
-  const objAfter = fileParse(filePath2);
+  const objBefore = fileTransform(filePath1);
+  const objAfter = fileTransform(filePath2);
   const unionKeys = _.sortBy(_.union(_.keys(objBefore), _.keys(objAfter)));
   const result = unionKeys.reduce((acc, key) => {
     if (_.has(objBefore, key) && _.has(objAfter, key) && objBefore[key] === objAfter[key]) {
