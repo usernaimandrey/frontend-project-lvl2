@@ -1,11 +1,6 @@
 import { test, expect } from '@jest/globals';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { fileTransform } from '../src/fileTransform.js';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+import fileTransform from '../src/fileTransform.js';
+import { getFixturePath } from '../src/workWhithFiles.js';
 
 test('fileTransform', () => {
   const expectObj = {
