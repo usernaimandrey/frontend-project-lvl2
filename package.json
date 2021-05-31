@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Gendiff cli utils",
   "main": "index.js",
   "type": "module",
@@ -34,6 +34,7 @@
   "homepage": "https://github.com/usernaimandrey/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^7.2.0",
+    "js-yaml": "^3.14.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
