@@ -12,14 +12,8 @@ beforeAll(() => {
   data.pathAfterYaml = getFixturePath('after.yaml');
 });
 
-test('genDiff whith Json', () => {
+test('genDiff whith Json & yml', () => {
   expect(genDiff(data.pathBeforeJson, data.pathAfterJson)).toEqual(data.expectedData);
-});
-
-test('genDiff whith Yml', () => {
-  expect(genDiff(data.pathBeforeYml, data.pathAfterYaml)).toEqual(data.expectedData);
-});
-
-test('genDiff whith Json & Yaml', () => {
   expect(genDiff(data.pathBeforeJson, data.pathAfterYaml)).toEqual(data.expectedData);
+  expect(genDiff(data.pathBeforeYml, data.pathAfterYaml)).toEqual(data.expectedData);
 });
