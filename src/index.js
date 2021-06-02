@@ -1,22 +1,17 @@
-import _ from 'lodash';
 import fileTransform from './fileTransform.js';
+import buildAst from './formater/buildAst.js';
+import stylish from './formater/stylish.js';
 
-const genDiff = (filePath1, filePath2) => {
+const genDiff = (filePath1, filePath2, format = 'stylish') => {
   const objBefore = fileTransform(filePath1);
   const objAfter = fileTransform(filePath2);
-  const unionKeys = _.sortBy(_.union(_.keys(objBefore), _.keys(objAfter)));
-  const result = unionKeys.reduce((acc, key) => {
-    if (_.has(objBefore, key) && !_.has(objAfter, key)) {
-      return [...acc, `  - ${key}: ${objBefore[key]}`];
-    }
-    if (!_.has(objBefore, key) && _.has(objAfter, key)) {
-      return [...acc, `  + ${key}: ${objAfter[key]}`];
-    }
-    return (_.has(objBefore, key) && _.has(objAfter, key) && objBefore[key] === objAfter[key])
-      ? [...acc, `    ${key}: ${objBefore[key]}`]
-      : [...acc, `  - ${key}: ${objBefore[key]}`, `  + ${key}: ${objAfter[key]}`];
-  }, []);
-  return ['{', ...result, '}'].join('\n');
+  const treeAst = buildAst(objBefore, objAfter);
+  switch (format) {
+    case 'stylish':
+      return stylish(treeAst);
+    default:
+      return treeAst;
+  }
 };
 
 export default genDiff;

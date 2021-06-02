@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { readFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,6 +8,6 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 const getAbsPath = (pathFile) => path.resolve(process.cwd(), pathFile);
 
-const readFile = (fileName) => fs.readFileSync(getAbsPath(fileName), 'utf8');
+const readFile = (fileName) => readFileSync(getAbsPath(fileName), 'utf8');
 
 export { getFixturePath, readFile };
