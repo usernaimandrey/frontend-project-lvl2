@@ -1,6 +1,28 @@
 import _ from 'lodash';
 
+const render = (value) => {
+  const result = value.reduce((acc, el) => {
+    const {
+      name, type, value1, value2, children,
+    } = el;
+    switch (type) {
+      case 'unchanged':
+        return { ...acc, [`  ${name}`]: value1 };
+      case 'added':
+        return { ...acc, [`+ ${name}`]: value1 };
+      case 'removed':
+        return { ...acc, [`- ${name}`]: value1 };
+      case 'updated':
+        return { ...acc, [`- ${name}`]: value1, [`+ ${name}`]: value2 };
+      default:
+        return { ...acc, [`  ${name}`]: render(children) };
+    }
+  }, {});
+  return result;
+};
+
 const stylish = (value, replacer = ' ', spacesCount = 2) => {
+  const diffObj = render(value);
   const marker = ['  ', '+ ', '- '];
   const iter = (currentValue, depth) => {
     if (!_.isPlainObject(currentValue)) {
@@ -20,7 +42,6 @@ const stylish = (value, replacer = ' ', spacesCount = 2) => {
     ].join('\n');
   };
 
-  return iter(value, 1);
+  return iter(diffObj, 1);
 };
-
 export default stylish;

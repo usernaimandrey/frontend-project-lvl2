@@ -9,8 +9,16 @@
 
 **Working with relative and absolute paths to files**
 
+**Flags:**
+
+1. -V, --version: output the version number
+2. -h, --help: display help for command
+3. -f --format [type]:
+> stylish(default) - displays the difference as a tree 
+> plain - displays the difference as a list 
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/bb081c93a9cdef392469/maintainability)](https://codeclimate.com/github/usernaimandrey/frontend-project-lvl2/maintainability)
 [![Node.js CI](https://github.com/usernaimandrey/frontend-project-lvl2/actions/workflows/node.js.yml/badge.svg)](https://github.com/usernaimandrey/frontend-project-lvl2/actions/workflows/node.js.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/bb081c93a9cdef392469/test_coverage)](https://codeclimate.com/github/usernaimandrey/frontend-project-lvl2/test_coverage)
 ## Demonstration of work
-[![asciicast](https://asciinema.org/a/417825.svg)](https://asciinema.org/a/417825)
+[![asciicast](https://asciinema.org/a/419645.svg)](https://asciinema.org/a/419645)
