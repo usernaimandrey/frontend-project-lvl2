@@ -14,6 +14,7 @@
 1. -V, --version: output the version number
 2. -h, --help: display help for command
 3. -f --format [type]:
+
 > stylish(default) - displays the difference as a tree 
 > plain - displays the difference as a list
 > json -displays the difference as a json 
