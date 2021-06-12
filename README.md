@@ -15,8 +15,10 @@
 2. -h, --help: display help for command
 3. -f --format [type]:
 
-> stylish(default) - displays the difference as a tree 
+> stylish(default) - displays the difference as a tree
+>  
 > plain - displays the difference as a list
+> 
 > json -displays the difference as a json 
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/bb081c93a9cdef392469/maintainability)](https://codeclimate.com/github/usernaimandrey/frontend-project-lvl2/maintainability)
