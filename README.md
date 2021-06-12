@@ -27,19 +27,24 @@
 ## Demonstration of work
 
 **work with flat structures**
+
 [![asciicast](https://asciinema.org/a/417282.svg)](https://asciinema.org/a/417282)
 
 **work with flat structures and different file formats**
+
 [![asciicast](https://asciinema.org/a/417286.svg)](https://asciinema.org/a/417286)
 [![asciicast](https://asciinema.org/a/417473.svg)](https://asciinema.org/a/417473)
 
 **work with tree structures**
+
 [![asciicast](https://asciinema.org/a/417825.svg)](https://asciinema.org/a/417825)
 
 **work with flat output (plain format)**
+
 [![asciicast](https://asciinema.org/a/419645.svg)](https://asciinema.org/a/419645)
 
 **json output**
+
 [![asciicast](https://asciinema.org/a/419953.svg)](https://asciinema.org/a/419953)
 
 
