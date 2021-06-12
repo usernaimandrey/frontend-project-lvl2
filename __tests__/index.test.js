@@ -1,26 +1,22 @@
 import { readFile, getFixturePath } from '../src/workWhithFiles.js';
 import genDiff from '../src/index.js';
 
-const data = {};
-
-beforeAll(() => {
-  data.expectedStylish = readFile(getFixturePath('stylish.txt'));
-  data.expectedPlain = readFile(getFixturePath('plain.txt'));
-  data.expectedJson = readFile(getFixturePath('json.txt'));
-  data.pathBeforeJson = getFixturePath('before.json');
-  data.pathAfterJson = getFixturePath('after.json');
-  data.pathBeforeYml = getFixturePath('before.yml');
-  data.pathAfterYaml = getFixturePath('after.yaml');
-});
+const expectedStylish = readFile(getFixturePath('stylish.txt'));
+const expectedPlain = readFile(getFixturePath('plain.txt'));
+const expectedJson = readFile(getFixturePath('json.txt'));
+const pathBeforeJson = getFixturePath('before.json');
+const pathAfterJson = getFixturePath('after.json');
+const pathBeforeYml = getFixturePath('before.yml');
+const pathAfterYaml = getFixturePath('after.yaml');
 
 test('genDiff whith Json & yml', () => {
-  expect(genDiff(data.pathBeforeJson, data.pathAfterJson)).toEqual(data.expectedStylish);
-  expect(genDiff(data.pathBeforeJson, data.pathAfterYaml)).toEqual(data.expectedStylish);
-  expect(genDiff(data.pathBeforeYml, data.pathAfterYaml)).toEqual(data.expectedStylish);
-  expect(genDiff(data.pathBeforeJson, data.pathAfterJson, 'plain')).toEqual(data.expectedPlain);
-  expect(genDiff(data.pathBeforeJson, data.pathAfterYaml, 'plain')).toEqual(data.expectedPlain);
-  expect(genDiff(data.pathBeforeYml, data.pathAfterYaml, 'plain')).toEqual(data.expectedPlain);
-  expect(genDiff(data.pathBeforeJson, data.pathAfterJson, 'json')).toEqual(data.expectedJson);
-  expect(genDiff(data.pathBeforeJson, data.pathAfterYaml, 'json')).toEqual(data.expectedJson);
-  expect(genDiff(data.pathBeforeYml, data.pathAfterYaml, 'json')).toEqual(data.expectedJson);
+  expect(genDiff(pathBeforeJson, pathAfterJson)).toEqual(expectedStylish);
+  expect(genDiff(pathBeforeJson, pathAfterYaml)).toEqual(expectedStylish);
+  expect(genDiff(pathBeforeYml, pathAfterYaml)).toEqual(expectedStylish);
+  expect(genDiff(pathBeforeJson, pathAfterJson, 'plain')).toEqual(expectedPlain);
+  expect(genDiff(pathBeforeJson, pathAfterYaml, 'plain')).toEqual(expectedPlain);
+  expect(genDiff(pathBeforeYml, pathAfterYaml, 'plain')).toEqual(expectedPlain);
+  expect(genDiff(pathBeforeJson, pathAfterJson, 'json')).toEqual(expectedJson);
+  expect(genDiff(pathBeforeJson, pathAfterYaml, 'json')).toEqual(expectedJson);
+  expect(genDiff(pathBeforeYml, pathAfterYaml, 'json')).toEqual(expectedJson);
 });
