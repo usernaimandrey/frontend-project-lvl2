@@ -27,8 +27,10 @@ const plain = (value) => {
           return iter(children, curetPath);
         case 'removed':
           return `Property '${curetPath.join('.')}' was removed`;
-        default:
+        case 'unchanged':
           return [];
+        default:
+          throw new Error(`Unknown type: '${type}'!`);
       }
     });
     return _.flattenDeep(result).join('\n');
